@@ -16,18 +16,18 @@ extension RestAPI {
     }
 }
 
-extension RestAPI.Profile {
+extension RestAPI.Profile: TargetType {
     
     var baseURL: URL {
-        return Endpoint.baseURL
+        return Endpoints.baseURL
     }
     
     var path: String {
         switch self {
         case .getProfile:
-            return Endpoint.Profile.getProfile
+            return Endpoints.Profile.getProfile
         case .editProfile:
-            return Endpoint.Profile.editProfile
+            return Endpoints.Profile.editProfile
         }
     }
     
@@ -69,11 +69,7 @@ extension RestAPI.Profile {
         return ["Authorization": "Bearer \(token)"]
     }
     
-    var accessToken: String? {
+    private var accessToken: String? {
         return UserDefaults.standard.string(forKey: "token")
-    }
-    
-    var url: String {
-        return "\(baseURL)\(path)"
     }
 }

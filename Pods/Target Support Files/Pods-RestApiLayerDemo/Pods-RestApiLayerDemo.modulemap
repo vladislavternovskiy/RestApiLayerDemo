@@ -1,0 +1,6 @@
+framework module Pods_RestApiLayerDemo {
+  umbrella header "Pods-RestApiLayerDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

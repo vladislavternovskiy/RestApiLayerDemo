@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Endpoint {
+extension Endpoints {
     
     struct Profile {
         static let getProfile = "getProfile/"
