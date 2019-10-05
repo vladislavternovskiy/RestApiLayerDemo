@@ -14,11 +14,8 @@
 		0E7091D3234288BE008C5CDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E7091D2234288BE008C5CDA /* Assets.xcassets */; };
 		0E7091D6234288BE008C5CDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E7091D4234288BE008C5CDA /* LaunchScreen.storyboard */; };
 		0E7091E023428AE7008C5CDA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7091DE23428AE7008C5CDA /* Network.swift */; };
-		0E7091E123428AE7008C5CDA /* TargetType+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7091DF23428AE7008C5CDA /* TargetType+URL.swift */; };
 		0E7091E323428C7D008C5CDA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7091E223428C7D008C5CDA /* User.swift */; };
 		0E7091E523428D17008C5CDA /* RestAPI+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7091E423428D17008C5CDA /* RestAPI+Profile.swift */; };
-		0E7091E723428E54008C5CDA /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7091E623428E54008C5CDA /* Endpoints.swift */; };
-		0E7091E923428EE0008C5CDA /* Endpoints+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7091E823428EE0008C5CDA /* Endpoints+Profile.swift */; };
 		0E7091ED23429EEF008C5CDA /* Encodable+ToDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7091EC23429EEF008C5CDA /* Encodable+ToDictionary.swift */; };
 		0E7091EF23429F4D008C5CDA /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7091EE23429F4D008C5CDA /* RestAPI.swift */; };
 		5F91C3CDD876436C9B522A3D /* Pods_RestApiLayerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F2391FD062766F921EC43A2 /* Pods_RestApiLayerDemo.framework */; };
@@ -34,11 +31,8 @@
 		0E7091D5234288BE008C5CDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E7091D7234288BE008C5CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E7091DE23428AE7008C5CDA /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		0E7091DF23428AE7008C5CDA /* TargetType+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TargetType+URL.swift"; sourceTree = "<group>"; };
 		0E7091E223428C7D008C5CDA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0E7091E423428D17008C5CDA /* RestAPI+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RestAPI+Profile.swift"; sourceTree = "<group>"; };
-		0E7091E623428E54008C5CDA /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
-		0E7091E823428EE0008C5CDA /* Endpoints+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoints+Profile.swift"; sourceTree = "<group>"; };
 		0E7091EC23429EEF008C5CDA /* Encodable+ToDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+ToDictionary.swift"; sourceTree = "<group>"; };
 		0E7091EE23429F4D008C5CDA /* RestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
 		0F2391FD062766F921EC43A2 /* Pods_RestApiLayerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RestApiLayerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +89,6 @@
 				0E7091EB23429ED1008C5CDA /* Extensions */,
 				0E7091DE23428AE7008C5CDA /* Network.swift */,
 				0E7091EE23429F4D008C5CDA /* RestAPI.swift */,
-				0E7091E623428E54008C5CDA /* Endpoints.swift */,
 			);
 			path = RestAPI;
 			sourceTree = "<group>";
@@ -105,7 +98,6 @@
 			children = (
 				0E7091F123429FE4008C5CDA /* Models */,
 				0E7091E423428D17008C5CDA /* RestAPI+Profile.swift */,
-				0E7091E823428EE0008C5CDA /* Endpoints+Profile.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -113,7 +105,6 @@
 		0E7091EB23429ED1008C5CDA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				0E7091DF23428AE7008C5CDA /* TargetType+URL.swift */,
 				0E7091EC23429EEF008C5CDA /* Encodable+ToDictionary.swift */,
 			);
 			path = Extensions;
@@ -272,12 +263,9 @@
 			files = (
 				0E7091CE234288BD008C5CDA /* ViewController.swift in Sources */,
 				0E7091E523428D17008C5CDA /* RestAPI+Profile.swift in Sources */,
-				0E7091E723428E54008C5CDA /* Endpoints.swift in Sources */,
-				0E7091E123428AE7008C5CDA /* TargetType+URL.swift in Sources */,
 				0E7091E323428C7D008C5CDA /* User.swift in Sources */,
 				0E7091CA234288BD008C5CDA /* AppDelegate.swift in Sources */,
 				0E7091E023428AE7008C5CDA /* Network.swift in Sources */,
-				0E7091E923428EE0008C5CDA /* Endpoints+Profile.swift in Sources */,
 				0E7091EF23429F4D008C5CDA /* RestAPI.swift in Sources */,
 				0E7091ED23429EEF008C5CDA /* Encodable+ToDictionary.swift in Sources */,
 				0E7091CC234288BD008C5CDA /* SceneDelegate.swift in Sources */,

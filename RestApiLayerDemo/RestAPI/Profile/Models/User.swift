@@ -1,9 +1,9 @@
 //
 //  User.swift
-//  LeroyMerlin
+//  RestApiLayerDemo
 //
-//  Created by Oleksii Huralnyk on 8/14/17.
-//  Copyright © 2017 NullGravity. All rights reserved.
+//  Created by Владислав Терновский on 9/30/19.
+//  Copyright © 2019 Vladyslav Ternovskyi. All rights reserved.
 //
 
 import Foundation

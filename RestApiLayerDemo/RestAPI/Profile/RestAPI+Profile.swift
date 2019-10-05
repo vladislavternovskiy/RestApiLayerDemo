@@ -1,5 +1,5 @@
 //
-//  RestAPI+Profile.swift
+//  ProfileSpecification.swift
 //  RestApiLayerDemo
 //
 //  Created by Владислав Терновский on 9/30/19.
@@ -8,26 +8,34 @@
 
 import Moya
 
-extension RestAPI {
+enum ProfileSpecification {
     
-    enum Profile {
-        case getProfile
-        case editProfile(user: User)
+    enum HTTPResource {
+        static let getProfile = "/getProfile"
+        static let editProfile = "/editProfile"
     }
+    
+    case getProfile
+    case editProfile(user: User)
 }
 
-extension RestAPI.Profile: TargetType {
+extension ProfileSpecification: RequestSpecification {
+    typealias ModelDTO = User
+    
+    var absoluteURLString: String {
+        return "\(baseURL)\(path)"
+    }
     
     var baseURL: URL {
-        return Endpoints.baseURL
+        return RestAPI.baseURL
     }
     
     var path: String {
         switch self {
         case .getProfile:
-            return Endpoints.Profile.getProfile
+            return HTTPResource.getProfile
         case .editProfile:
-            return Endpoints.Profile.editProfile
+            return HTTPResource.editProfile
         }
     }
     
@@ -40,12 +48,12 @@ extension RestAPI.Profile: TargetType {
         }
     }
     
-    var parameters: [String: Any]? {
+    var parameters: [String: Any] {
         switch self {
         case .editProfile(let user):
-            return try? user.encodeToDictionary()
+            return (try? user.encodeToDictionary()) ?? [:]
         default:
-            return nil
+            return [:]
         }
     }
     
@@ -56,13 +64,13 @@ extension RestAPI.Profile: TargetType {
     var task: Task {
         switch self {
         case .editProfile:
-            return .requestParameters(parameters: parameters!, encoding: JSONEncoding.default)
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         default:
             return .requestPlain
         }
     }
     
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         guard let token = accessToken, token.isEmpty == false else {
             return nil
         }

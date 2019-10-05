@@ -10,4 +10,11 @@ import Foundation
 
 enum RestAPI {
     
+    case profile(ProfileSpecification)
+}
+
+extension RestAPI {
+    
+    // swiftlint:disable:next force_unwrapping
+    static let baseURL = URL(string: "https://api.test.one")!
 }

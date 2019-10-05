@@ -17,8 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        network.request(target: RestAPI.Profile.getProfile)
-            .map(User.self)
+        network.request(specification: ProfileSpecification.getProfile)
             .subscribe(onSuccess: { user in
                 print(user)
             }, onError: { error in
