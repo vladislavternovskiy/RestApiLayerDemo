@@ -12,21 +12,23 @@ protocol Network {
     func request<Spec: RequestSpecification>(specification: Spec) -> Single<Spec.ModelDTO>
 }
 
-class DefaultNetwork: Network {
+struct DefaultNetwork: Network {
     
     func request<Spec: RequestSpecification>(specification: Spec) -> Single<Spec.ModelDTO> {
-        let provider: MoyaProvider<Spec> = createProvider()
+        let provider: MoyaProvider<Spec> = makeProvider()
         
         return provider.rx.request(specification).map(Spec.ModelDTO.self)
     }
     
-    private func createProvider<Spec: RequestSpecification>() -> MoyaProvider<Spec> {
-        return MoyaProvider<Spec>(endpointClosure: { target in
-            return Endpoint(url: target.absoluteURLString,
-                            sampleResponseClosure: { .networkResponse(200, target.sampleData) },
-                            method: target.method,
-                            task: target.task,
-                            httpHeaderFields: target.headers)
-        }, plugins: [NetworkLoggerPlugin()])
+    private func makeProvider<Spec: RequestSpecification>() -> MoyaProvider<Spec> {
+        return MoyaProvider<Spec>(endpointClosure: makeEndpoint, plugins: [NetworkLoggerPlugin()])
+    }
+    
+    private func makeEndpoint<Spec: RequestSpecification>(for specification: Spec) -> Endpoint {
+        return Endpoint(url: specification.absoluteURLString,
+                        sampleResponseClosure: { .networkResponse(200, specification.sampleData) },
+                        method: specification.method,
+                        task: specification.task,
+                        httpHeaderFields: specification.headers)
     }
 }
